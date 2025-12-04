@@ -6,19 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('sheets', function (Blueprint $table) {
+        Schema::create('chamas', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->date('upload_date');
-            $table->boolean('is_excluded')->default(false);
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('sheets');
+        Schema::dropIfExists('chamas');
     }
 };
